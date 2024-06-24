@@ -11,7 +11,6 @@
             margin: 0;
             padding: 0;
         }
-
         header {
             background-color: #333;
             color: #fff;
@@ -22,38 +21,32 @@
             top: 0;
             z-index: 1000;
         }
-
         header h1 {
             font-size: 1.5rem;
             margin: 0;
         }
-
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             text-align: center;
         }
-
         nav ul li {
             display: inline;
             margin-right: 10px;
         }
-
         nav ul li a {
             color: #fff;
             text-decoration: none;
         }
-
         main {
             max-width: 800px;
-            margin: 160px auto 20px; 
+            margin: 120px auto 20px; 
             padding: 20px;
             background-color: #f9f9f9;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         footer {
             text-align: center;
             padding: 5px 0;
@@ -63,45 +56,43 @@
             position: fixed;
             bottom: 0;
         }
-
         footer p {
             font-size: 0.8rem;
             margin: 0;
         }
-
-        button[type="submit"] {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-            background-color: #4CAF50;
+        .menu-toggle {
+            display: none;
+            background-color: #333;
             color: #fff;
-            border: none;
-            border-radius: 5px;
+            padding: 10px;
+            font-size: 1.2rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            text-align: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
-
-        button[type="submit"]:hover {
-            background-color: #45a049;
+        nav.menu {
+            display: block;
         }
-
-        /* Responsive adjustments */
+        nav.menu.show {
+            display: block;
+        }
         @media (max-width: 600px) {
             header h1 {
                 font-size: 1.2rem;
             }
-            nav ul {
+            nav.menu {
                 display: none;
                 flex-direction: column;
                 position: fixed;
                 width: 100%;
-                top: 60px;
+                top: 60px; 
                 left: 0;
                 background-color: #333;
                 z-index: 1000;
             }
-            nav ul.show {
+            nav.menu.show {
                 display: flex;
             }
             nav ul li {
@@ -116,17 +107,7 @@
                 font-size: 0.7rem;
             }
             .menu-toggle {
-                display: block;
-                background-color: #333;
-                color: #fff;
-                padding: 10px;
-                font-size: 1.2rem;
-                cursor: pointer;
-                text-align: center;
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                z-index: 1001; /* Ensure it's above nav */
+                display: block; 
             }
         }
     </style>
@@ -214,57 +195,59 @@
                 <input type="radio" name="q8" value="e"> Peek<br>
             </div>
             <div>
-                <p>9. Manakah dari algoritma pengurutan berikut yang memiliki kompleksitas waktu terburuk?</p>
-                <input type="radio" name="q9" value="a"> Merge Sort<br>
-                <input type="radio" name="q9" value="b"> Bubble Sort<br>
-                <input type="radio" name="q9" value="c"> Quick Sort<br>
-                <input type="radio" name="q9" value="d"> Insertion Sort<br>
-                <input type="radio" name="q9" value="e"> Selection Sort<br>
+                <p>9. Pencarian dengan menggunakan teknik Linear Search biasanya dilakukan pada data yang diatur ...</p>
+                <input type="radio" name="q9" value="a"> Secara terbalik<br>
+                <input type="radio" name="q9" value="b"> Secara acak<br>
+                <input type="radio" name="q9" value="c"> Dalam urutan alfabetis<br>
+                <input type="radio" name="q9" value="d"> Dalam urutan numerik<br>
+                <input type="radio" name="q9" value="e"> Tanpa pengaturan khusus<br>
             </div>
             <div>
-                <p>10. Apa keunggulan utama dari penggunaan algoritma pencarian hash?</p>
-                <input type="radio" name="q10" value="a"> Efisiensi untuk pencarian dalam koleksi data besar<br>
-                <input type="radio" name="q10" value="b"> Kemampuan untuk menyortir data secara rekursif<br>
-                <input type="radio" name="q10" value="c"> Kualitas indeks data yang baik<br>
-                <input type="radio" name="q10" value="d"> Kecepatan untuk mengurutkan data yang terurut<br>
-                <input type="radio" name="q10" value="e"> Kemampuan untuk menambahkan data dengan cepat<br>
+                <p>10. Struktur data apa yang paling cocok digunakan untuk implementasi tabel hash?</p>
+                <input type="radio" name="q10" value="a"> Antrean (Queue)<br>
+                <input type="radio" name="q10" value="b"> Tumpukan (Stack)<br>
+                <input type="radio" name="q10" value="c"> Graf (Graph)<br>
+                <input type="radio" name="q10" value="d"> Hash Table<br>
+                <input type="radio" name="q10" value="e"> Pohon (Tree)<br>
             </div>
-            <button type="submit">Submit</button>
+            <input type="submit" value="Submit">
         </form>
     </main>
     <footer>
-        <p>&copy; 2024 Media Pembelajaran Berpikir Komputasional</p>
+        <p>&copy; 2024 Tugas Komputasi - Contoh LLC</p>
     </footer>
     <script>
         function submitQuiz() {
-            const answers = {
-                q1: 'b',
-                q2: 'c',
-                q3: 'c',
-                q4: 'b',
-                q5: 'c',
-                q6: 'b',
-                q7: 'e',
-                q8: 'c',
-                q9: 'b',
-                q10: 'a'
-            };
-            let score = 0;
-            const form = document.getElementById('quizForm');
-            for (const [question, answer] of Object.entries(answers)) {
-                const userAnswer = form.querySelector(`input[name="${question}"]:checked`);
-                if (userAnswer && userAnswer.value === answer) {
-                    score += 10; 
+            var form = document.getElementById('quizForm');
+            var total = 10;
+            var score = 0;
+    
+            var answers = ['b', 'c', 'c', 'b', 'c', 'b', 'e', 'd', 'e', 'd'];
+    
+            for (var i = 1; i <= total; i++) {
+                var radios = document.getElementsByName('q' + i);
+                for (var j = 0; j < radios.length; j++) {
+                    var radio = radios[j];
+                    if (radio.value == answers[i - 1] && radio.checked) {
+                        score++;
+                    }
                 }
             }
-            localStorage.setItem('quizScore', score);
-            window.location.href = 'hasil.html';
-            return false;
+    
+            
+            var results = document.createElement('div');
+            results.innerHTML = '<h2>Hasil Quiz</h2>';
+            results.innerHTML += '<p>Total jawaban benar: ' + score + '</p>';
+            results.innerHTML += '<p>Skor: ' + score / total * 100 + '%</p>';
+            form.style.display = 'none'; 
+            form.parentNode.insertBefore(results, form.nextSibling); 
+    
+            return false; 
         }
-
+    
         function toggleMenu() {
-            const navMenu = document.querySelector('nav.menu');
-            navMenu.classList.toggle('show');
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('show'); 
         }
     </script>
 </body>
