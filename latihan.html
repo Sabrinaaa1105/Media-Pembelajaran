@@ -218,31 +218,29 @@
     </footer>
     <script>
         function submitQuiz() {
-            var form = document.getElementById('quizForm');
-            var total = 10;
-            var score = 0;
-    
-            var answers = ['b', 'c', 'c', 'b', 'c', 'b', 'e', 'd', 'e', 'd'];
-    
-            for (var i = 1; i <= total; i++) {
-                var radios = document.getElementsByName('q' + i);
-                for (var j = 0; j < radios.length; j++) {
-                    var radio = radios[j];
-                    if (radio.value == answers[i - 1] && radio.checked) {
-                        score++;
-                    }
+            const answers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'c',
+                q4: 'b',
+                q5: 'c',
+                q6: 'b',
+                q7: 'e',
+                q8: 'c',
+                q9: 'b',
+                q10: 'a'
+            };
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            for (const [question, answer] of Object.entries(answers)) {
+                const userAnswer = form.querySelector('input[name="' + question + '"]:checked');
+                if (userAnswer && userAnswer.value === answer) {
+                    score += 10; 
                 }
             }
-    
-            
-            var results = document.createElement('div');
-            results.innerHTML = '<h2>Hasil Quiz</h2>';
-            results.innerHTML += '<p>Total jawaban benar: ' + score + '</p>';
-            results.innerHTML += '<p>Skor: ' + score / total * 100 + '%</p>';
-            form.style.display = 'none'; 
-            form.parentNode.insertBefore(results, form.nextSibling); 
-    
-            return false; 
+            localStorage.setItem('quizScore', score);
+            window.location.href = 'hasil.html';
+            return false;
         }
     
         function toggleMenu() {
