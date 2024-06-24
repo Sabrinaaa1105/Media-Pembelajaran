@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrean (Queue)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 1.5rem; 
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            max-width: 800px;
+            margin: 120px auto 20px; 
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 5px 0;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        footer p {
+            font-size: 0.8rem; 
+            margin: 0;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            main {
+                margin: 160px 10px 20px; 
+                padding: 15px;
+            }
+            footer p {
+                font-size: 0.7rem; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Berpikir Komputasional</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="searching.html">Pencarian (Searching)</a></li>
+                <li><a href="sorting.html">Pengurutan (Sorting)</a></li>
+                <li><a href="stack.html">Tumpukan (Stack)</a></li>
+                <li><a href="queue.html">Antrean (Queue)</a></li>
+                <li><a href="latihan.html">Latihan Soal</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 style="text-align: center;">Antrean (Queue)</h2>
+        <p>Antrean adalah struktur data yang mengorganisir elemen-elemen dalam urutan linier, mengikuti prinsip FIFO (First In First Out). Operasi-operasi dasar yang umum dilakukan pada antrean meliputi:</p>
+        <ul>
+            <li><strong>Enqueue:</strong> Menambahkan elemen baru ke dalam antrean pada posisi belakang (rear) dari antrean. Operasi ini digunakan untuk menambahkan elemen baru ke dalam antrean pada posisi belakang (rear). Saat melakukan enqueue, elemen baru ditempatkan setelah elemen terakhir yang ada di antrean saat itu. Hal ini membuat antrean bertambah panjang.</li>
+            <li><strong>Dequeue:</strong> Menghapus elemen yang berada di posisi depan (front) dari antrean dan mengembalikan nilainya. Operasi ini digunakan untuk menghapus elemen dari posisi depan (front) antrean dan mengembalikan nilainya. Setelah dequeue dilakukan, elemen berikutnya di antrean menjadi elemen baru yang berada di posisi depan. Operasi ini mengurangi panjang antrean.</li>
+            <li><strong>Peek:</strong> Melihat nilai dari elemen yang berada di posisi depan antrean tanpa menghapusnya. Operasi ini memungkinkan untuk melihat nilai dari elemen yang berada di posisi depan antrean tanpa menghapusnya. Dengan operasi ini, kita dapat memeriksa elemen pertama tanpa mempengaruhi struktur antrean.</li>
+            <li><strong>isEmpty:</strong> Memeriksa apakah antrean kosong atau tidak. Operasi ini digunakan untuk memeriksa apakah antrean kosong atau tidak. Ini berguna untuk menghindari melakukan operasi dequeue atau peek pada antrean kosong, yang dapat mengakibatkan kesalahan (error) dalam aplikasi.</li>
+        </ul>
+        
+        <h3>Contoh Penggunaan:</h3>
+        <p>Misalkan kita memiliki antrean untuk antrian pemesanan makanan di restoran:</p>
+        <ul>
+            <li>Awalnya, antrean kosong (isEmpty() = true).</li>
+            <li>Pemesan A memesan makanan dan dimasukkan ke dalam antrean (Enqueue(A)).</li>
+            <li>Pemesan B memesan makanan dan juga dimasukkan ke dalam antrean (Enqueue(B)).</li>
+            <li>Pemesan C memesan makanan dan dimasukkan ke dalam antrean (Enqueue(C)).</li>
+        </ul>
+        
+        <p>Sekarang, antrean terlihat seperti ini (dari depan ke belakang):</p>
+        <pre>
+        A -> B -> C
+        </pre>
+        
+        <ul>
+            <li>Operasi Peek() akan mengembalikan nilai A (pemesan pertama yang masih menunggu).</li>
+            <li>Operasi Dequeue() akan menghapus dan mengembalikan nilai A, sehingga antrean menjadi:</li>
+        </ul>
+        <pre>
+        B -> C
+        </pre>
+        
+        <ul>
+            <li>Sekarang, operasi Peek() akan mengembalikan nilai B.</li>
+            <li>Operasi Dequeue() berikutnya akan menghapus dan mengembalikan nilai B, sehingga antrean menjadi:</li>
+        </ul>
+        <pre>
+        C
+        </pre>
+        
+        <ul>
+            <li>Terakhir, jika kita Dequeue() lagi, maka nilai yang dihasilkan adalah C, dan antrean menjadi kosong.</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Media Pembelajaran Berpikir Komputasional</p>
+    </footer>
+</body>
+</html>

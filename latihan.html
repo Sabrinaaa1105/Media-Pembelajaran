@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 120px auto 20px; 
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 5px 0;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            main {
+                margin: 160px 10px 20px; 
+                padding: 15px;
+            }
+            footer p {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body class="latihan">
+    <header>
+        <h1>Berpikir Komputasional</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="searching.html">Pencarian (Searching)</a></li>
+                <li><a href="sorting.html">Pengurutan (Sorting)</a></li>
+                <li><a href="stack.html">Tumpukan (Stack)</a></li>
+                <li><a href="queue.html">Antrean (Queue)</a></li>
+                <li><a href="latihan.html">Latihan Soal</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Kerjakan Latihan Berikut Untuk Memperdalam Pengetahuan Anda</h2>
+        <form id="quizForm" onsubmit="return submitQuiz()">
+            <div>
+                <p>1. Apa yang dimaksud dengan Pencarian Biner?</p>
+                <input type="radio" name="q1" value="a"> Pencarian dengan membandingkan setiap elemen secara berurutan<br>
+                <input type="radio" name="q1" value="b"> Pencarian dengan membagi data menjadi dua bagian setiap kali<br>
+                <input type="radio" name="q1" value="c"> Pencarian dengan menggunakan struktur data tumpukan<br>
+                <input type="radio" name="q1" value="d"> Pencarian dengan algoritma Bubble Sort<br>
+                <input type="radio" name="q1" value="e"> Pencarian dengan menghitung nilai hash<br>
+            </div>
+            <div>
+                <p>2. Algoritma pengurutan mana yang memiliki kompleksitas waktu terbaik pada data yang hampir terurut?</p>
+                <input type="radio" name="q2" value="a"> Bubble Sort<br>
+                <input type="radio" name="q2" value="b"> Quick Sort<br>
+                <input type="radio" name="q2" value="c"> Insertion Sort<br>
+                <input type="radio" name="q2" value="d"> Merge Sort<br>
+                <input type="radio" name="q2" value="e"> Selection Sort<br>
+            </div>
+            <div>
+                <p>3. Operasi mana yang tidak ada dalam struktur data Tumpukan?</p>
+                <input type="radio" name="q3" value="a"> Push<br>
+                <input type="radio" name="q3" value="b"> Pop<br>
+                <input type="radio" name="q3" value="c"> Enqueue<br>
+                <input type="radio" name="q3" value="d"> Peek<br>
+                <input type="radio" name="q3" value="e"> Dequeue<br>
+            </div>
+            <div>
+                <p>4. Struktur data mana yang menggunakan prinsip FIFO?</p>
+                <input type="radio" name="q4" value="a"> Tumpukan<br>
+                <input type="radio" name="q4" value="b"> Antrean<br>
+                <input type="radio" name="q4" value="c"> Pencarian Biner<br>
+                <input type="radio" name="q4" value="d"> Hash Table<br>
+                <input type="radio" name="q4" value="e"> Graf<br>
+            </div>
+            <div>
+                <p>5. Algoritma pengurutan mana yang menggunakan pendekatan divide and conquer?</p>
+                <input type="radio" name="q5" value="a"> Bubble Sort<br>
+                <input type="radio" name="q5" value="b"> Selection Sort<br>
+                <input type="radio" name="q5" value="c"> Merge Sort<br>
+                <input type="radio" name="q5" value="d"> Insertion Sort<br>
+                <input type="radio" name="q5" value="e"> Linear Search<br>
+            </div>
+            <div>
+                <p>6. Apa tujuan dari teknik pencarian dalam komputasi?</p>
+                <input type="radio" name="q6" value="a"> Mengurutkan data<br>
+                <input type="radio" name="q6" value="b"> Menemukan informasi yang relevan<br>
+                <input type="radio" name="q6" value="c"> Menggabungkan elemen data<br>
+                <input type="radio" name="q6" value="d"> Memproses data grafis<br>
+                <input type="radio" name="q6" value="e"> Menghapus data yang tidak relevan<br>
+            </div>
+            <div>
+                <p>7. Algoritma pengurutan mana yang cocok digunakan untuk mengurutkan data dalam jumlah besar secara efisien?</p>
+                <input type="radio" name="q7" value="a"> Bubble Sort<br>
+                <input type="radio" name="q7" value="b"> Insertion Sort<br>
+                <input type="radio" name="q7" value="c"> Quick Sort<br>
+                <input type="radio" name="q7" value="d"> Selection Sort<br>
+                <input type="radio" name="q7" value="e"> Merge Sort<br>
+            </div>
+            <div>
+                <p>8. Operasi apa yang tidak termasuk dalam operasi dasar pada struktur data Antrean (Queue)?</p>
+                <input type="radio" name="q8" value="a"> Enqueue<br>
+                <input type="radio" name="q8" value="b"> Dequeue<br>
+                <input type="radio" name="q8" value="c"> Push<br>
+                <input type="radio" name="q8" value="d"> Pop<br>
+                <input type="radio" name="q8" value="e"> Peek<br>
+            </div>
+            <div>
+                <p>9. Manakah dari algoritma pengurutan berikut yang memiliki kompleksitas waktu terburuk?</p>
+                <input type="radio" name="q9" value="a"> Merge Sort<br>
+                <input type="radio" name="q9" value="b"> Bubble Sort<br>
+                <input type="radio" name="q9" value="c"> Quick Sort<br>
+                <input type="radio" name="q9" value="d"> Insertion Sort<br>
+                <input type="radio" name="q9" value="e"> Selection Sort<br>
+            </div>
+            <div>
+                <p>10. Apa keunggulan utama dari penggunaan algoritma pencarian hash?</p>
+                <input type="radio" name="q10" value="a"> Efisiensi untuk pencarian dalam koleksi data besar<br>
+                <input type="radio" name="q10" value="b"> Kemampuan untuk menyortir data secara rekursif<br>
+                <input type="radio" name="q10" value="c"> Kualitas indeks data yang baik<br>
+                <input type="radio" name="q10" value="d"> Kecepatan untuk mengurutkan data yang terurut<br>
+                <input type="radio" name="q10" value="e"> Kemampuan untuk menambahkan data dengan cepat<br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Media Pembelajaran Berpikir Komputasional</p>
+    </footer>
+    <script>
+        function submitQuiz() {
+            const answers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'c',
+                q4: 'b',
+                q5: 'c',
+                q6: 'b',
+                q7: 'e',
+                q8: 'c',
+                q9: 'b',
+                q10: 'a'
+            };
+            let score = 0;
+            const form = document.getElementById('quizForm');
+            for (const [question, answer] of Object.entries(answers)) {
+                const userAnswer = form.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === answer) {
+                    score += 10; 
+                }
+            }
+            localStorage.setItem('quizScore', score);
+            window.location.href = 'hasil.html';
+            return false;
+        }
+    </script>
+</body>
+</html>

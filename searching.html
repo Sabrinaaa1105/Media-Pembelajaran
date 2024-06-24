@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 1.5rem; 
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            max-width: 800px;
+            margin: 50px auto 20px; 
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 5px 0;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        footer p {
+            font-size: 0.8rem; 
+            margin: 0;
+        }
+    
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+            main {
+                margin: 70px 10px 20px; 
+                padding: 15px;
+            }
+            footer p {
+                font-size: 0.7rem; 
+            }
+            ul {
+                padding-left: 20px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Berpikir Komputasional</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="searching.html">Pencarian (Searching)</a></li>
+                <li><a href="sorting.html">Pengurutan (Sorting)</a></li>
+                <li><a href="stack.html">Tumpukan (Stack)</a></li>
+                <li><a href="queue.html">Antrean (Queue)</a></li>
+                <li><a href="latihan.html">Latihan Soal</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 style="text-align: center;">Pencarian (Searching)</h2>
+        <p>Pencarian adalah proses sistematis untuk mencari informasi yang spesifik dalam basis data, sistem file, atau internet menggunakan algoritma pencarian. Tujuannya adalah untuk menemukan informasi yang relevan sesuai dengan kriteria yang diberikan pengguna.</p>
+        <p>Proses searching dimulai dengan pengguna memasukkan kata kunci atau kriteria pencarian ke dalam sistem komputer atau aplikasi pencarian seperti mesin pencari di web. Kata kunci ini kemudian digunakan oleh sistem untuk mencocokkan dengan data yang tersimpan.</p>
+        
+        <p>Ada beberapa teknik dan algoritma yang digunakan dalam searching, tergantung pada jenis data dan kompleksitas sistemnya:</p>
+        <ul>
+            <li><strong>Pencarian Linear:</strong> Metode ini melibatkan pemeriksaan setiap item dalam kumpulan data secara berurutan. Ini sederhana tetapi mungkin tidak efisien untuk data besar.</li>
+            <li><strong>Pencarian Biner:</strong> Digunakan pada data terurut, pencarian biner membagi data menjadi dua bagian dan memeriksa elemen tengah. Ini berlanjut secara rekursif ke setengah bagian yang relevan hingga data ditemukan atau tidak ditemukan.</li>
+            <li><strong>Pencarian Hash:</strong> Memanfaatkan fungsi hash untuk memetakan kata kunci ke indeks dalam struktur data yang mengizinkan akses langsung ke elemen data. Ini efisien untuk pencarian dalam koleksi besar data.</li>
+            <li><strong>Pencarian dalam Graf:</strong> Digunakan untuk mencari jalur atau relasi antar entitas dalam struktur data graf, seperti jaringan sosial atau jaringan transportasi.</li>
+        </ul>
+        
+        <p>Contoh penerapan searching yang umum adalah ketika pengguna mencari informasi di mesin pencari seperti Google. Pengguna memasukkan kata kunci seperti "pandemi COVID-19" dan sistem Google akan mencari dan menampilkan halaman-halaman web yang mengandung informasi terkait.</p>
+        
+        <p>Penting untuk diperhatikan bahwa efektivitas searching sangat bergantung pada kualitas indeks data, algoritma pencarian yang digunakan, dan kompleksitas struktur data yang diterapkan. Pengembangan teknologi pencarian terus berlanjut untuk meningkatkan kecepatan, akurasi, dan relevansi hasil pencarian dalam menjawab kebutuhan informasi yang semakin kompleks dari pengguna komputer modern.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Media Pembelajaran Berpikir Komputasional</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumpukan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            max-width: 800px;
+            margin: 90px auto 20px; 
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 5px 0;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        footer p {
+            font-size: 0.8rem; 
+            margin: 0;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.2rem; 
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            main {
+                margin: 120px 10px 20px; 
+                padding: 15px;
+            }
+            footer p {
+                font-size: 0.7rem; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Berpikir Komputasional</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="searching.html">Pencarian (Searching)</a></li>
+                <li><a href="sorting.html">Pengurutan (Sorting)</a></li>
+                <li><a href="stack.html">Tumpukan (Stack)</a></li>
+                <li><a href="queue.html">Antrean (Queue)</a></li>
+                <li><a href="latihan.html">Latihan Soal</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 style="text-align: center;">Tumpukan (Stack)</h2>
+        <p>Tumpukan (Stack) adalah struktur data yang mengikuti prinsip LIFO (Last In First Out), yang berarti elemen yang terakhir dimasukkan ke dalam tumpukan akan menjadi yang pertama dikeluarkan. Operasi dasar pada tumpukan meliputi:</p>
+        <ul>
+            <li><strong>Push:</strong> Menambahkan elemen baru ke dalam tumpukan. Operasi ini digunakan untuk menambahkan elemen baru ke dalam tumpukan. Elemen baru akan ditambahkan di atas elemen yang sudah ada sebelumnya. Misalnya, jika kita memiliki tumpukan bilangan bulat, proses push(5) akan menambahkan angka 5 di atas angka yang paling atas di tumpukan.</li>
+            <li><strong>Pop:</strong> Menghapus elemen paling atas dari tumpukan. Operasi ini menghapus elemen paling atas dari tumpukan. Misalnya, jika kita melakukan pop() pada tumpukan yang berisi [1, 2, 3], maka elemen 3 akan dihapus, dan tumpukan akan menjadi [1, 2].</li>
+            <li><strong>Peek:</strong> Melihat nilai dari elemen paling atas tanpa menghapusnya dari tumpukan. Operasi ini digunakan untuk melihat nilai dari elemen paling atas tanpa menghapusnya dari tumpukan. Misalnya, jika kita melakukan peek() pada tumpukan [1, 2, 3], kita akan melihat nilai 3 tanpa mengubah tumpukan tersebut.</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Media Pembelajaran Berpikir Komputasional</p>
+    </footer>
+</body>
+</html>

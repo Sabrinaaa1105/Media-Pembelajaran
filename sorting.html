@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengurutan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 1.5rem; 
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            max-width: 800px;
+            margin: 90px auto 20px; 
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 5px 0;
+            background-color: #333;
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        footer p {
+            font-size: 0.8rem; 
+            margin: 0;
+        }
+        .sorting-example {
+            margin-top: 20px;
+        }
+        .sorting-example div {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin-bottom: 10px;
+        }
+        .sorting-example div span {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin: 0 2px;
+            border-radius: 5px;
+            font-size: 1rem; 
+        }
+        .sorting-example button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 1rem; 
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.2rem; 
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            main {
+                margin: 120px 10px 20px; 
+                padding: 15px;
+            }
+            footer p {
+                font-size: 0.7rem; 
+            }
+            .sorting-example button {
+                font-size: 0.9rem; 
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Berpikir Komputasional</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="searching.html">Pencarian (Searching)</a></li>
+                <li><a href="sorting.html">Pengurutan (Sorting)</a></li>
+                <li><a href="stack.html">Tumpukan (Stack)</a></li>
+                <li><a href="queue.html">Antrean (Queue)</a></li>
+                <li><a href="latihan.html">Latihan Soal</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 style="text-align: center;">Pengurutan (Sorting)</h2>
+        <p>Pengurutan adalah proses menyusun data dalam urutan tertentu. Algoritma pengurutan digunakan untuk mengatur data secara sistematis sehingga mempermudah proses pencarian, analisis, atau aplikasi lain yang membutuhkan data terstruktur. Dalam komputasi, ada berbagai jenis algoritma pengurutan dengan kompleksitas dan efisiensi yang berbeda-beda. Beberapa algoritma pengurutan yang umum digunakan meliputi:</p>
+        <ul>
+            <li><strong>Bubble Sort:</strong> Algoritma ini secara berulang membandingkan dan menukar elemen berdekatan yang tidak berurutan sampai seluruh daftar terurut.</li>
+            <p><strong>Contoh:</strong> Misalkan kita memiliki array [5, 3, 8, 4, 2]. Proses Bubble Sort akan bertukar pasangan elemen yang tidak berurutan hingga array terurut, seperti [2, 3, 4, 5, 8].</p>
+            <li><strong>Insertion Sort:</strong> Memasukkan setiap elemen ke dalam posisi yang tepat dalam bagian yang sudah diurutkan dari daftar yang belum diurutkan.</li>
+            <p><strong>Contoh:</strong> Dengan array [12, 11, 13, 5, 6], Insertion Sort memasukkan setiap elemen ke dalam bagian yang sudah diurutkan di sebelah kiri, sehingga menjadi [5, 6, 11, 12, 13].</p>
+            <li><strong>Selection Sort:</strong> Mencari elemen terkecil dari daftar yang belum diurutkan dan memasukkannya ke dalam posisi yang sesuai dalam bagian yang sudah diurutkan.</li>
+            <p><strong>Contoh:</strong> Dengan array [64, 25, 12, 22, 11], Selection Sort mencari elemen terkecil dan menukarnya dengan elemen pertama, dan seterusnya, hingga menjadi [11, 12, 22, 25, 64].</p>
+            <li><strong>Quick Sort:</strong> Algoritma yang menggunakan pendekatan divide and conquer, memilih elemen pivot dan membagi array menjadi dua subarray yang diurutkan berdasarkan pivot.</li>
+            <p><strong>Contoh:</strong> Dengan array [10, 7, 8, 9, 1, 5], Quick Sort memilih pivot, membagi array menjadi dua subarray [1, 5, 7, 8, 9] dan [10], dan mengurutkan keduanya menjadi [1, 5, 7, 8, 9, 10].</p>
+            <li><strong>Merge Sort:</strong> Algoritma yang juga menggunakan pendekatan divide and conquer, membagi array menjadi dua subarray, mengurutkan masing-masing subarray secara rekursif, dan menggabungkan kembali subarray yang sudah diurutkan.</li>
+            <p><strong>Contoh:</strong> Dengan array [38, 27, 43, 3, 9, 82, 10], Merge Sort membagi array menjadi subarray [38, 27, 43, 3] dan [9, 82, 10], mengurutkan masing-masing, dan menggabungkannya menjadi [3, 9, 10, 27, 38, 43, 82].</p>
+        </ul>
+        
+        <div class="sorting-example">
+            <h3>Contoh Pengurutan dengan Bubble Sort</h3>
+            <div id="bubbleSortExample"></div>
+            <button onclick="runBubbleSort()">Mulai Bubble Sort</button>
+        </div>
+        
+        <script>
+            function runBubbleSort() {
+                const data = [5, 3, 8, 4, 2];
+                const n = data.length;
+                let steps = [];
+
+                for (let i = 0; i < n - 1; i++) {
+                    for (let j = 0; j < n - i - 1; j++) {
+                        //membandingkan elemen berpasangan dan menukar jika tidak sesuai urutan
+                        if (data[j] > data[j + 1]) {
+                            let temp = data[j];
+                            data[j] = data[j + 1];
+                            data[j + 1] = temp;
+                            //simpan langkah proses
+                            steps.push([...data]);
+                        }
+                    }
+                }
+
+                //menampilkan proses pengurutan
+                const container = document.getElementById('bubbleSortExample');
+                container.innerHTML = '';
+                steps.forEach((step, index) => {
+                    const div = document.createElement('div');
+                    step.forEach(num => {
+                        const span = document.createElement('span');
+                        span.textContent = num;
+                        div.appendChild(span);
+                    });
+                    setTimeout(() => {
+                        container.appendChild(div);
+                    }, index * 1000); //delay 1 detik antara setiap langkah
+                });
+            }
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2024 Media Pembelajaran Berpikir Komputasional</p>
+    </footer>
+</body>
+</html>
