@@ -47,7 +47,7 @@
 
         main {
             max-width: 800px;
-            margin: 120px auto 20px; 
+            margin: 160px auto 20px; 
             padding: 20px;
             background-color: #f9f9f9;
             border: 1px solid #ccc;
@@ -91,6 +91,19 @@
             header h1 {
                 font-size: 1.2rem;
             }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                width: 100%;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                z-index: 1000;
+            }
+            nav ul.show {
+                display: flex;
+            }
             nav ul li {
                 display: block;
                 margin: 10px 0;
@@ -102,13 +115,27 @@
             footer p {
                 font-size: 0.7rem;
             }
+            .menu-toggle {
+                display: block;
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                font-size: 1.2rem;
+                cursor: pointer;
+                text-align: center;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 1001; /* Ensure it's above nav */
+            }
         }
     </style>
 </head>
 <body class="latihan">
     <header>
         <h1>Berpikir Komputasional</h1>
-        <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div> <!-- Menu toggle button -->
+        <nav class="menu">
             <ul>
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="searching.html">Pencarian (Searching)</a></li>
@@ -233,6 +260,11 @@
             localStorage.setItem('quizScore', score);
             window.location.href = 'hasil.html';
             return false;
+        }
+
+        function toggleMenu() {
+            const navMenu = document.querySelector('nav.menu');
+            navMenu.classList.toggle('show');
         }
     </script>
 </body>
