@@ -22,7 +22,7 @@
             z-index: 1000;
         }
         header h1 {
-            font-size: 1.5rem; 
+            font-size: 1.5rem;
             margin: 0;
         }
         nav ul {
@@ -41,7 +41,7 @@
         }
         main {
             max-width: 800px;
-            margin: 50px auto 20px; 
+            margin: 70px auto 20px;
             padding: 20px;
             background-color: #f9f9f9;
             border: 1px solid #ccc;
@@ -57,27 +57,69 @@
             bottom: 0;
         }
         footer p {
-            font-size: 0.8rem; 
+            font-size: 0.8rem;
             margin: 0;
         }
-    
+        .menu-toggle {
+            display: none;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-align: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        nav.menu {
+            display: block;
+        }
+        nav.menu.show {
+            display: block;
+        }
         @media (max-width: 600px) {
             header h1 {
                 font-size: 1.2rem;
+            }
+            nav.menu {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                width: 100%;
+                top: 40px;
+                left: 0;
+                background-color: #333;
+                z-index: 1000;
+            }
+            nav.menu.show {
+                display: flex;
+            }
+            nav ul {
+                display: flex;
+                flex-direction: column;
             }
             nav ul li {
                 display: block;
                 margin: 5px 0;
             }
+            nav ul li a {
+                display: block;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
             main {
-                margin: 70px 10px 20px; 
+                margin: 100px 10px 20px;
                 padding: 15px;
             }
             footer p {
-                font-size: 0.7rem; 
+                font-size: 0.7rem;
             }
             ul {
-                padding-left: 20px; 
+                padding-left: 20px;
+            }
+            .menu-toggle {
+                display: block;
             }
         }
     </style>
@@ -85,7 +127,8 @@
 <body>
     <header>
         <h1>Berpikir Komputasional</h1>
-        <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav class="menu">
             <ul>
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="searching.html">Pencarian (Searching)</a></li>
@@ -116,5 +159,11 @@
     <footer>
         <p>&copy; 2024 Media Pembelajaran Berpikir Komputasional</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav.menu');
+            nav.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
